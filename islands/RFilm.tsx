@@ -122,7 +122,11 @@ const RFilm: FunctionComponent<{ film: tFilm; cookies: tProyect[] }> = (
           style={{ maxWidth: "200px", marginBottom: "10px" }}
         />
         <div style={{ display: "flex", gap: "10px" }}>
-          <button onClick={() => {}}>
+          <button
+            onClick={(e) => {
+              window.location.href = `/info/${props.film._id}`;
+            }}
+          >
             +info
           </button>
 

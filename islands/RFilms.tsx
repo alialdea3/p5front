@@ -57,7 +57,7 @@ const RFilms: FunctionalComponent<{ films: tFilm[]; cookies: tCookie[] }> = (
       <div>
         <button
           onClick={() => {
-            const projectsUrl = `/proyects/${proyectNames}`;
+            const projectsUrl = `/proyects`;
             window.location.href = projectsUrl;
           }}
         >

@@ -1,6 +1,8 @@
 import { FunctionComponent } from "preact";
-import { tProyect } from "../types.ts";
+import { tFilm } from "../types.ts";
 import BackButton from "../islands/BackButton.tsx";
+import { DeleteButton } from "../islands/DeleteButton.tsx";
+import { DeleteFilm } from "../islands/DeleteFilm.tsx";
 
 type Props = {
   proyectos: { pname: string; pfilm: tFilm[] }[];
@@ -12,7 +14,8 @@ const RProyectos: FunctionComponent<Props> = ({ proyectos }) => {
       <BackButton />
       <div class="container">
         <h1 class="title">Proyectos</h1>
-
+        <DeleteButton proyectos={proyectos} />
+        <DeleteFilm proyectos={proyectos} />
         {proyectos.length === 0 ? <p>No hay proyectos disponibles.</p> : (
           <ul>
             {proyectos.map((proyecto) => (

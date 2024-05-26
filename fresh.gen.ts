@@ -10,6 +10,8 @@ import * as $index from "./routes/index.tsx";
 import * as $info_id_ from "./routes/info/[id].tsx";
 import * as $proyects from "./routes/proyects.tsx";
 import * as $BackButton from "./islands/BackButton.tsx";
+import * as $DeleteButton from "./islands/DeleteButton.tsx";
+import * as $DeleteFilm from "./islands/DeleteFilm.tsx";
 import * as $FiltrosGuapos from "./islands/FiltrosGuapos.tsx";
 import * as $RFilm from "./islands/RFilm.tsx";
 import * as $RFilmComplete from "./islands/RFilmComplete.tsx";
@@ -28,6 +30,8 @@ const manifest = {
   },
   islands: {
     "./islands/BackButton.tsx": $BackButton,
+    "./islands/DeleteButton.tsx": $DeleteButton,
+    "./islands/DeleteFilm.tsx": $DeleteFilm,
     "./islands/FiltrosGuapos.tsx": $FiltrosGuapos,
     "./islands/RFilm.tsx": $RFilm,
     "./islands/RFilmComplete.tsx": $RFilmComplete,

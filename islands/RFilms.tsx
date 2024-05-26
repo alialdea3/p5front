@@ -10,27 +10,16 @@ import {
   formatg,
   iso,
   name,
-  sProyectName,
-  sProyecto,
 } from "../singnals.ts";
 
 const RFilms: FunctionalComponent<{ films: tFilm[]; cookies: tProyect[] }> = (
   props,
 ) => {
-  /*const proyectlist: tProyect[] = [];
-  sProyecto.value.forEach((element: tProyect) => {
-    proyectlist.push(element);
-  });*/
-
   const proyectNames: string[] = [];
-  sProyectName.value.forEach((element: string) => {
-    proyectNames.push(element);
-  });
 
   const filteredFilms = props.films.filter((film) => {
     if (brand.value !== "Todas" && film.brand !== brand.value) return false;
 
-    //console.log(parseInt(iso.value));
     if (iso.value !== "Todas" && film.iso.toString() !== iso.value) {
       return false;
     }

@@ -1,11 +1,11 @@
 import { FunctionComponent } from "preact";
 import { tProyect } from "../types.ts";
+
 type Props = {
   proyectos: tProyect[];
 };
-const RProyectos: FunctionComponent<Props> = (
-  { proyectos },
-) => {
+
+const RProyectos: FunctionComponent<Props> = ({ proyectos }) => {
   return (
     <div>
       <h1>Proyectos</h1>
@@ -15,7 +15,9 @@ const RProyectos: FunctionComponent<Props> = (
             <li key={proyecto.pname}>
               <h2>{proyecto.pname}</h2>
               <ul>
-                {proyecto.pfilm.map((filmId) => <li key={filmId}>{filmId}</li>)}
+                {proyecto.pfilm.map((film) => (
+                  <li key={film._id}>{film.name}</li>
+                ))}
               </ul>
             </li>
           ))}

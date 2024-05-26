@@ -2,14 +2,14 @@ import { useEffect, useState } from "preact/hooks";
 import { createRef, FunctionComponent } from "preact";
 import jscookie from "npm:js-cookie@3.0.5";
 
-import { tFilm, tProyect } from "../types.ts";
+import { tCookie, tFilm, tProyect } from "../types.ts";
 
-const RFilm: FunctionComponent<{ film: tFilm; cookies: tProyect[] }> = (
+const RFilm: FunctionComponent<{ film: tFilm; cookies: tCookie[] }> = (
   props,
 ) => {
   const [selectedProyecto, setSelectedProyecto] = useState<string>("");
   const [nuevoProyecto, setNuevoProyecto] = useState<string>("");
-  const [proyectos, setProyectos] = useState<tProyect[]>([]);
+  const [proyectos, setProyectos] = useState<tCookie[]>([]);
 
   const modalRef = createRef();
   const modalRef2 = createRef();
@@ -46,9 +46,9 @@ const RFilm: FunctionComponent<{ film: tFilm; cookies: tProyect[] }> = (
       return;
     }
 
-    const nuevoProyect: tProyect = {
+    const nuevoProyect: tCookie = {
       pname: nuevoProyecto,
-      pfilm: [props.film],
+      pfilm: [props.film._id],
     };
 
     const updatedProyectos = [...proyectos, nuevoProyect];
@@ -75,9 +75,9 @@ const RFilm: FunctionComponent<{ film: tFilm; cookies: tProyect[] }> = (
       return;
     }
 
-    const proyectoActualizado: tProyect = {
+    const proyectoActualizado: tCookie = {
       ...proyectoSeleccionado,
-      pfilm: [...proyectoSeleccionado.pfilm, props.film],
+      pfilm: [...proyectoSeleccionado.pfilm, props.film._id],
     };
 
     const updatedProyectos = proyectos.map((proyecto) =>

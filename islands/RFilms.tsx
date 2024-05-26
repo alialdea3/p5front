@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { tFilm, tProyect } from "../types.ts";
+import { tCookie, tFilm, tProyect } from "../types.ts";
 import RFilm from "./RFilm.tsx";
 import { useEffect } from "preact/hooks";
 import {
@@ -12,7 +12,7 @@ import {
   name,
 } from "../singnals.ts";
 
-const RFilms: FunctionalComponent<{ films: tFilm[]; cookies: tProyect[] }> = (
+const RFilms: FunctionalComponent<{ films: tFilm[]; cookies: tCookie[] }> = (
   props,
 ) => {
   const proyectNames: string[] = [];

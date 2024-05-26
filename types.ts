@@ -18,3 +18,8 @@ export type tProyect = {
   pname: string;
   pfilm: tFilm[];
 };
+
+export type tCookie = {
+  pname: string;
+  pfilm: string[];
+};

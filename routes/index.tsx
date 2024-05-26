@@ -2,7 +2,7 @@ import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import RFilms from "../islands/RFilms.tsx";
 import FiltrosGuapos from "../islands/FiltrosGuapos.tsx";
-import { tFilm, tProyect } from "../types.ts";
+import { tCookie, tFilm, tProyect } from "../types.ts";
 import jscookie from "npm:js-cookie@3.0.5";
 
 export const handler: Handlers<tFilm[]> = {
@@ -21,7 +21,7 @@ export const handler: Handlers<tFilm[]> = {
 
 export default (props: PageProps<tFilm[]>) => {
   const films = props.data;
-  const cookies: tProyect[] = JSON.parse(jscookie.get("proyectos") || "[]");
+  const cookies: tCookie[] = JSON.parse(jscookie.get("proyectos") || "[]");
   // {<FiltrosGuapos films={films} />}
   return ( //<RPerfiles usuarios={usuarios} />
     <>

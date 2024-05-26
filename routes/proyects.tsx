@@ -5,8 +5,8 @@ import { getCookies } from "$std/http/cookie.ts";
 
 type Data = {
   proyectos: tProyect[];
-  pCompleto?: { pname: string; pfilms: tFilm[] }[];
 };
+
 export const handler: Handlers = {
   GET: async (req: Request, ctx: FreshContext<unknown>) => {
     const cookies = getCookies(req.headers);
@@ -20,11 +20,21 @@ export const handler: Handlers = {
       decodeURIComponent(cookies.proyectos),
     );
 
-    return ctx.render({ proyectos });
+    const res = await fetch("https://filmapi.vercel.app/api/films");
+    const data: tFilm[] = await res.json();
+
+    const pCompleto = proyectos.map((proyecto) => {
+      const films = proyecto.pfilm.map((filmId) => {
+        return data.find((f: tFilm) => f._id === filmId) as tFilm;
+      }).filter((film): film is tFilm => film !== undefined);
+      return { pname: proyecto.pname, pfilm: films };
+    });
+
+    return ctx.render({ proyectos: pCompleto });
   },
 };
 
-const Page = (props: PageProps) => {
+const Page = (props: PageProps<Data>) => {
   return <RProyectos proyectos={props.data.proyectos} />;
 };
 

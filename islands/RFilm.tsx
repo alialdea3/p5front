@@ -61,6 +61,7 @@ const RFilm: FunctionComponent<{ film: tFilm; cookies: tCookie[] }> = (
     setProyectos(updatedProyectos);
     setNuevoProyecto("");
     closeModal(modalRef2);
+    window.location.reload();
   };
 
   const handleAddToProject = (e: Event) => {
@@ -155,7 +156,7 @@ const RFilm: FunctionComponent<{ film: tFilm; cookies: tCookie[] }> = (
                       onInput={(e: any) => setNuevoProyecto(e.target.value)}
                       required
                     />
-                    <button type="submit">Crear</button>
+                    <button type="submit">Crear y añadir</button>
                   </form>
                 </div>
               </div>

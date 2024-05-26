@@ -37,10 +37,49 @@ html {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.container {
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #ff1493; 
+  margin-bottom: 30px;
+}
+.project-container {
+  background: linear-gradient(135deg, #ffccff, #ff99cc);
+  border: 1px solid #ff66b2;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff1493;
+  margin-bottom: 10px;
+}
+
+.film-list {
+  list-style: none;
+  padding: 0;
+}
+
+.film-item {
+  font-size: 18px;
+  padding: 5px 0;
+  color: #333;
+}
+
+.film-item:not(:last-child) {
+  border-bottom: 1px solid #ff66b2;
+}
 .film-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Esto creará columnas automáticas que se ajustarán al tamaño del contenido, con un ancho mínimo de 250px */
-  gap: 20px; /* Espacio entre las películas */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px; 
 }
 
 .search-bar {
@@ -53,12 +92,12 @@ html {
 .filters-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Espacio entre cada filtro */
+  gap: 10px; 
 }
 
 .search-bar {
   padding: 10px;
-  background-color: #ffe6f2; /* Fondo rosado */
+  background-color: #ffe6f2; 
   border-radius: 15px;
   max-width: 1000px;
   margin: 10px auto;
@@ -69,25 +108,25 @@ html {
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, #ffccff, #ff99cc);
-  border: 1px solid #ff66b2; /* Borde más delgado */
+  border: 1px solid #ff66b2; 
   border-radius: 10px;
-  padding: 10px; /* Reducción del padding */
-  flex: 1 1 200px; /* Permite que el contenedor se adapte al tamaño del padre */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+  padding: 10px; 
+  flex: 1 1 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .search-label {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #ff1493; /* Texto rosado oscuro */
+  color: #ff1493; 
 }
 
 .search-select,
 .search-input {
   font-size: 14px;
-  padding: 8px; /* Reducción del padding */
-  border: 1px solid #ff66b2; /* Borde más delgado */
+  padding: 8px; 
+  border: 1px solid #ff66b2; 
   border-radius: 5px;
   background-color: #ffffff;
   color: #333333;
@@ -106,7 +145,7 @@ html {
   }
 
   .search-box {
-    flex: 1 1 50px; /* Asegura que cada caja tenga un tamaño mínimo razonable */
+    flex: 1 1 50px; 
   }
 }
 
